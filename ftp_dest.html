@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    RED.nodes.registerType('gulp.dest', {
+        category: 'gulp',
+        color: '#CF4647',
+        defaults: {
+            name: { value: "" },
+            path: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-files-o",
+        label: function () {
+            return this.name || this.path || "gulp.dest";
+        },
+        align:"right"
+    });
+</script>
+
+<script type="text/html" data-template-name="gulp.dest">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-path"><i class="fa fa-tag"></i> Path</label>
+        <input type="text" id="node-input-path">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="gulp.dest">
+    <p>Writes Vinyl objects to the file system.</p>
+    <p>Can be used in the middle or at the end of a pipeline to create files on the file system. Whenever a Vinyl object is passed through the stream, it writes the contents and other details out to the file system at the given directory. </p>
+
+</script>

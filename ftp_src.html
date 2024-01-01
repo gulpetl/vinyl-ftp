@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    RED.nodes.registerType('gulp.src',{
+        category: 'gulp',
+        color: '#CF4647',
+        // color: '#3984FF', // dropbox blue night
+        defaults: {
+            name: {value:""},
+            path: {value:""}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-files-o",
+        label: function() {
+            return this.name||this.path||"gulp.src";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="gulp.src">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-path"><i class="fa fa-tag"></i> Path</label>
+        <input type="text" id="node-input-path">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="gulp.src">
+    <p>Creates a stream for reading Vinyl objects from the file system.</p>
+    <p>Can be used at the beginning or in the middle of a pipeline to add files based on the given globs.</p>
+    
+</script>
