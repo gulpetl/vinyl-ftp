@@ -1,14 +1,11 @@
 {
-  "name": "vinyl-ftp",
+  "name": "@gulpetl/vinyl-ftp",
   "version": "0.6.1",
   "description": "Vinyl adapter for FTP",
   "license": "MIT",
-  "repository": "morris/vinyl-ftp",
-  "author": {
-    "name": "Morris Brodersen",
-    "email": "mb@morrisbrodersen.de",
-    "url": "http://morrisbrodersen.de"
-  },
+  "homepage": "https://docs.gulpetl.com",
+  "repository": "https://github.com/gulpetl/vinyl-ftp",
+  "author": "peterl@sbcotton.com",
   "files": [
     "index.js",
     "lib",

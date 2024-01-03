@@ -1,4 +1,4 @@
-# vinyl-ftp
+# @gulpetl/vinyl-ftp
 
 [![version](https://img.shields.io/npm/v/vinyl-ftp.svg)](https://www.npmjs.com/package/vinyl-ftp)
 [![downloads](https://img.shields.io/npm/dm/vinyl-ftp.svg)](https://www.npmjs.com/package/vinyl-ftp)
@@ -7,6 +7,8 @@ Blazing fast vinyl adapter for FTP.
 Supports parallel transfers, conditional transfers, buffered or streamed files, and more.
 Often performs better than your favorite desktop FTP client.
 
+Forked from [vinyl-ftp](https://github.com/gulpetl/vinyl-ftp) to add support for Node-RED as part of the [gulpetl](https://gulpetl.com/) project.
+ 
 ## Usage
 
 Nice and gulpy deployment task:
@@ -59,7 +61,7 @@ fs.src( [ './src/**' ], { buffer: false } )
 *Remember not to push FTP credentials to public repos!*
 
 ### Node-RED ###
-[Node-RED](https://nodered.org/) is a low-code, visual programming environment for event-driven applications. vinyl-ftp is available there as part of the [gulp-etl](http://gulpetl.com) project; to install it to Node-RED under Manage Palette search for `vinyl-ftp`.
+[Node-RED](https://nodered.org/) is a low-code, visual programming environment for event-driven applications. vinyl-ftp is available there as part of the [gulpetl](http://gulpetl.com) project; to install it to Node-RED under Manage Palette search for `vinyl-ftp`.
 
 ## API
 
