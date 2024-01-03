@@ -58,6 +58,8 @@ fs.src( [ './src/**' ], { buffer: false } )
 
 *Remember not to push FTP credentials to public repos!*
 
+### Node-RED ###
+[Node-RED](https://nodered.org/) is a low-code, visual programming environment for event-driven applications. vinyl-ftp is available there as part of the [gulp-etl](http://gulpetl.com) project; to install it to Node-RED under Manage Palette search for `vinyl-ftp`.
 
 ## API
 

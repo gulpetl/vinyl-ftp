@@ -20,20 +20,25 @@
   "scripts": {
     "test": "istanbul cover node_modules/mocha/bin/_mocha test"
   },
-  "node-red": {		
-		"version": ">=2.0.0",
-		"nodes": {
-			"ftp.src": "ftp_src.js",
-			"ftp.dest": "ftp_dest.js"
-		}
-	},
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "ftp.src": "ftp_src.js",
+      "ftp.dest": "ftp_dest.js"
+    }
+  },
   "keywords": [
     "vinyl",
     "gulp",
     "ftp",
     "deploy",
     "deployment",
-    "upload"
+    "upload",
+    "gulp-etl",
+    "gulpetl",
+    "etl",
+    "data",
+    "node-red"
   ],
   "dependencies": {
     "ftp": "^0.3.8",
