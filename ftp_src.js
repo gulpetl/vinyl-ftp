@@ -1,7 +1,7 @@
-const gulp = require('gulp');
+const ftp = require('.');
 
 module.exports = function (RED) {
-    function GulpSrcNode(config) {
+    function FtpSrcNode(config) {
         RED.nodes.createNode(this, config);
         this.path = config.path;
 
@@ -10,7 +10,10 @@ module.exports = function (RED) {
 
         node.on('input', function (msg, send) {
             let configObj = { buffer: false, ...msg.config } // default to streaming mode
-            // msg = RED.util.cloneMessage(msg);
+            if (!msg?.config?.ftp) {
+                node.error("config.ftp object required (e.g. {buffer:false, ftp:{host:'mywebsite.tld',...}})");
+                return;
+            }
 
             /** 
              * plugins will be an array of objects where obj.init is a function that returns a stream. This clones well for
@@ -19,14 +22,23 @@ module.exports = function (RED) {
             msg.plugins = [];
 
             // set the payload to give info on the gulp stream we're creating
-            msg.payload = "gulp.src: " + node.path;
+            msg.payload = "ftp.src: " + node.path;
             msg.topic = "gulp-initialize";
 
             msg.plugins.push({
                 name: config.type,
-                // init:() => gulp.src(node.path, configObj)
                 init: () => {
-                    return gulp.src(node.path, configObj)
+                    // set up new FTP connection
+                    let conn;
+                    try {
+                        conn = new ftp.create(msg.config.ftp);
+                    }
+                    catch (err) {
+                        node.error(err);
+                        return;
+                    }
+
+                    return conn.src(node.path, configObj)
                         .on("data", () => {
                             this.status({ fill: "green", shape: "dot", text: "active" });
                         })
@@ -40,5 +52,5 @@ module.exports = function (RED) {
         });
 
     }
-    RED.nodes.registerType("gulp.src", GulpSrcNode);
+    RED.nodes.registerType("ftp.src", FtpSrcNode);
 }

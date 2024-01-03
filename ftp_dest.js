@@ -1,8 +1,8 @@
-const gulp = require('gulp');
-const combine = require('stream-combiner')
+const ftp = require('.');
+const combine = require('stream-combiner');
 
 module.exports = function (RED) {
-    function GulpDestNode(config) {
+    function FtpDestNode(config) {
         RED.nodes.createNode(this, config);
         this.path = config.path;
         var node = this;
@@ -15,13 +15,27 @@ module.exports = function (RED) {
             }
             else if (msg.topic == "gulp-initialize") {
                 if (!msg.plugins) {
-                    node.warn(`gulp.dest: cannot initialize; missing gulp.src?`)
+                    node.warn(`ftp.dest: cannot initialize; missing gulp.src?`)
                     return;
                 }
 
-                console.log(`gulp.dest: creating gulp stream; combining ${msg.plugins.length} plugin streams`)
+                // set up new FTP connection
+                if (!msg?.config?.ftp) {
+                    node.error("config.ftp object required (e.g. {buffer:false, ftp:{host:'mywebsite.tld',...}})");
+                    return;
+                }
+                let conn;
+                try {
+                    conn = new ftp.create(msg.config.ftp);
+                }
+                catch (err) {
+                    node.error(err);
+                    return;
+                }
+
+                console.log(`ftp.dest: creating gulp stream; combining ${msg.plugins.length} plugin streams`)
                 combine(msg.plugins.map((plugin) => plugin.init()))
-                    .pipe(gulp.dest(node.path)
+                    .pipe(conn.dest(node.path)
                         .on("data", (file) => {
                             this.status({ fill: "green", shape: "dot", text: "active" });
 
@@ -46,5 +60,5 @@ module.exports = function (RED) {
             send(msg);
         });
     }
-    RED.nodes.registerType("gulp.dest", GulpDestNode);
+    RED.nodes.registerType("ftp.dest", FtpDestNode);
 }
