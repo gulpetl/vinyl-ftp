@@ -1,7 +1,7 @@
 <script type="text/javascript">
-    RED.nodes.registerType('gulp.dest', {
+    RED.nodes.registerType('ftp.dest', {
         category: 'gulp',
-        color: '#CF4647',
+        color: '#8946CF',
         defaults: {
             name: { value: "" },
             path: { value: "" }
@@ -10,13 +10,13 @@
         outputs: 1,
         icon: "font-awesome/fa-files-o",
         label: function () {
-            return this.name || this.path || "gulp.dest";
+            return this.name || this.path || "ftp.dest";
         },
         align:"right"
     });
 </script>
 
-<script type="text/html" data-template-name="gulp.dest">
+<script type="text/html" data-template-name="ftp.dest">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -27,7 +27,7 @@
     </div>
 </script>
 
-<script type="text/html" data-help-name="gulp.dest">
+<script type="text/html" data-help-name="ftp.dest">
     <p>Writes Vinyl objects via FTP.</p>
     <p>Can be used in the middle or at the end of a pipeline to create files on an FTP server. Whenever a Vinyl object is passed through the stream, it writes the contents and other details out to the file system at the given directory. </p>
 

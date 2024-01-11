@@ -1,7 +1,7 @@
 <script type="text/javascript">
-    RED.nodes.registerType('gulp.src',{
+    RED.nodes.registerType('ftp.src',{
         category: 'gulp',
-        color: '#CF4647',
+        color: '#8946CF',
         defaults: {
             name: {value:""},
             path: {value:""}
@@ -10,12 +10,12 @@
         outputs: 1,
         icon: "font-awesome/fa-files-o",
         label: function() {
-            return this.name||this.path||"gulp.src";
+            return this.name||this.path||"ftp.src";
         }
     });
 </script>
 
-<script type="text/html" data-template-name="gulp.src">
+<script type="text/html" data-template-name="ftp.src">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -26,7 +26,7 @@
     </div>
 </script>
 
-<script type="text/html" data-help-name="gulp.src">
+<script type="text/html" data-help-name="ftp.src">
     <p>Creates a stream for reading Vinyl objects from FTP.</p>
     <p>Can be used at the beginning or in the middle of a pipeline to add files from an FTP server based on the given globs.</p>
     

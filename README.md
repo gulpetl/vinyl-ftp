@@ -7,7 +7,7 @@ Blazing fast vinyl adapter for FTP.
 Supports parallel transfers, conditional transfers, buffered or streamed files, and more.
 Often performs better than your favorite desktop FTP client.
 
-Forked from [vinyl-ftp](https://github.com/gulpetl/vinyl-ftp) to add support for Node-RED as part of the [gulpetl](https://gulpetl.com/) project.
+Forked from [vinyl-ftp](https://github.com/morris/vinyl-ftp) to add support for Node-RED as part of the [gulpetl](https://gulpetl.com/) project.
  
 ## Usage
 
