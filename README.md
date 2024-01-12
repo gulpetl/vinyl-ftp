@@ -1,8 +1,5 @@
 # @gulpetl/vinyl-ftp
 
-[![version](https://img.shields.io/npm/v/vinyl-ftp.svg)](https://www.npmjs.com/package/vinyl-ftp)
-[![downloads](https://img.shields.io/npm/dm/vinyl-ftp.svg)](https://www.npmjs.com/package/vinyl-ftp)
-
 Blazing fast vinyl adapter for FTP.
 Supports parallel transfers, conditional transfers, buffered or streamed files, and more.
 Often performs better than your favorite desktop FTP client.
