@@ -1,6 +1,6 @@
 {
   "name": "@gulpetl/vinyl-ftp",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "Vinyl adapter for FTP",
   "license": "MIT",
   "homepage": "https://gulpetl.com",
@@ -42,6 +42,7 @@
     "minimatch": "^3.0.2",
     "object-assign": "^4.1.1",
     "parallel-transform": "^1.1.0",
+    "stream-combiner": "^0.2.2",
     "through2": "^2.0.3",
     "vinyl": "^2.0.1"
   },
