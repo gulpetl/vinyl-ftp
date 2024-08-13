@@ -1,6 +1,6 @@
 {
   "name": "@gulpetl/vinyl-ftp",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Vinyl adapter for FTP",
   "license": "MIT",
   "homepage": "https://gulpetl.com",
@@ -10,8 +10,8 @@
     "index.js",
     "lib",
     "index.d.ts",
-    "ftp_src.js",
-    "ftp_dest.js"
+    "ftp_src.*",
+    "ftp_dest.*"
   ],
   "engines": {
     "node": ">=0.10.0"
